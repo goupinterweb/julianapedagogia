@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site, acervo digital e cultura local: quando a memória fica acessível | Juliana Pedagogia</title>
+  <meta name="description" content="Um site pode organizar fotos, vídeos, relatos, gírias e atividades para que a população consulte e reconheça sua própria cultura.">
+  <meta name="author" content="Juliana Sancinetti Custódio Fabris">
+  <meta property="og:title" content="Site, acervo digital e cultura local: quando a memória fica acessível">
+  <meta property="og:description" content="Um site pode organizar fotos, vídeos, relatos, gírias e atividades para que a população consulte e reconheça sua própria cultura.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://julianapedagogia.vercel.app/artigos/site-acervo-digital-e-cultura-local-2025.html">
+  <link rel="canonical" href="https://julianapedagogia.vercel.app/artigos/site-acervo-digital-e-cultura-local-2025.html">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+
+:root{
+  --bg:#fbf7ef;
+  --paper:#ffffff;
+  --ink:#25322f;
+  --muted:#66746f;
+  --brand:#246b5f;
+  --brand-2:#f0a33a;
+  --brand-3:#a85f45;
+  --soft:#e8f3ef;
+  --line:rgba(37,50,47,.14);
+  --focus:#005fcc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(240,163,58,.20), transparent 34rem),
+    radial-gradient(circle at 80% 0%, rgba(36,107,95,.16), transparent 32rem),
+    var(--bg);
+  font-size:18px;
+  line-height:1.65;
+}
+body.large-text{font-size:20px}
+body.high-contrast{
+  --bg:#000;
+  --paper:#fff;
+  --ink:#000;
+  --muted:#222;
+  --brand:#003cff;
+  --brand-2:#ffbf00;
+  --brand-3:#111;
+  --soft:#fff;
+  --line:#000;
+}
+a{color:var(--brand)}
+a:hover{color:#17483f}
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem;top:1rem;width:auto;height:auto;z-index:9999;
+  background:#fff;color:#000;padding:.75rem 1rem;border:3px solid var(--focus);border-radius:.75rem;
+}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+.navbar{
+  background:rgba(255,255,255,.92)!important;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand-mark{
+  width:44px;height:44px;border-radius:16px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;font-weight:900;
+  box-shadow:0 16px 36px rgba(36,107,95,.24);
+}
+.btn-brand{
+  background:var(--brand);
+  color:#fff;
+  border:0;
+}
+.btn-brand:hover{background:#17483f;color:#fff}
+.btn-outline-brand{
+  border:1px solid rgba(36,107,95,.42);
+  color:var(--brand);
+  background:#fff;
+}
+.btn-outline-brand:hover{background:var(--brand);color:#fff}
+.hero{
+  padding:8rem 0 4rem;
+}
+.hero-card{
+  border:1px solid var(--line);
+  border-radius:2rem;
+  overflow:hidden;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 30px 75px rgba(37,50,47,.12);
+}
+.hero-img{
+  min-height:100%;
+  background:
+    linear-gradient(180deg, rgba(20,31,29,.08), rgba(20,31,29,.72)),
+    url("https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1600") center/cover;
+}
+.section-title{
+  font-weight:900;
+  letter-spacing:-.045em;
+}
+.lead-muted{color:var(--muted)}
+.small-caps{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:800;
+}
+.glass{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.82);
+  border-radius:1.5rem;
+  box-shadow:0 18px 48px rgba(37,50,47,.08);
+}
+.accessibility-panel{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:1000;
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.accessibility-panel button{
+  box-shadow:0 12px 35px rgba(37,50,47,.18);
+}
+.feature-card{
+  border:1px solid var(--line);
+  border-radius:1.5rem;
+  background:#fff;
+  padding:1.5rem;
+  height:100%;
+}
+.feature-card i{font-size:2rem;color:var(--brand)}
+.article-card{
+  border:1px solid var(--line);
+  border-radius:1.5rem;
+  background:#fff;
+  overflow:hidden;
+  height:100%;
+  transition:.22s ease;
+}
+.article-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 50px rgba(37,50,47,.14);
+}
+.article-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  background:#e9e4d8;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:.3rem .65rem;
+  background:var(--soft);
+  color:var(--brand);
+  font-size:.78rem;
+  font-weight:700;
+  margin:.15rem;
+}
+.video-card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:1.5rem;
+  overflow:hidden;
+  height:100%;
+}
+.video-frame{
+  aspect-ratio:16/9;
+  width:100%;
+}
+.video-frame iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+.article-page-hero{padding:8rem 0 2rem}
+.article-page-img{
+  width:100%;
+  max-height:480px;
+  object-fit:cover;
+  border-radius:2rem;
+  box-shadow:0 25px 70px rgba(37,50,47,.13);
+}
+.article-body p{
+  font-size:1.08rem;
+  line-height:1.85;
+  color:#33413d;
+  margin-bottom:1.15rem;
+}
+.article-outline{
+  position:sticky;
+  top:96px;
+}
+.article-outline li{margin-bottom:.55rem;color:var(--muted)}
+.footer{
+  background:#152522;
+  color:#d8e4df;
+}
+.footer a{color:#fff}
+.list-group-item{
+  border-color:var(--line);
+}
+@media (max-width:991px){
+  .hero{padding-top:6rem}
+  .hero-img{min-height:320px}
+  .article-outline{position:static}
+}
+
+
+/* Correção Vercel: CSS principal embutido em todos os HTMLs */
+img{max-width:100%;height:auto}
+.navbar-brand{text-decoration:none}
+.btn{text-decoration:none}
+.bg-white{background:#fff!important}
+.text-secondary{color:#66746f!important}
+.container{max-width:1140px}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="https://julianapedagogia.vercel.app/">
+        <span class="brand-mark" aria-hidden="true">JP</span>
+        <span>Juliana Pedagogia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navMain" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="https://julianapedagogia.vercel.app/#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://julianapedagogia.vercel.app/#portfolio">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://julianapedagogia.vercel.app/#artigos">Artigos</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://julianapedagogia.vercel.app/#links-artigos">Links diretos</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand rounded-pill px-3" href="https://julianapedagogia.vercel.app/#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="accessibility-panel" aria-label="Ferramentas de acessibilidade">
+    <button id="contrastBtn" type="button" class="btn btn-dark rounded-pill btn-sm"><i class="bi bi-circle-half me-1"></i> Alto contraste</button>
+    <button id="textBtn" type="button" class="btn btn-brand rounded-pill btn-sm"><i class="bi bi-fonts me-1"></i> Aumentar texto</button>
+  </div>
+
+  <main id="conteudo">
+    <header class="article-page-hero">
+      <div class="container">
+        <a class="btn btn-outline-brand rounded-pill mb-4" href="https://julianapedagogia.vercel.app/#artigos"><i class="bi bi-arrow-left me-1"></i> Voltar para artigos</a>
+        <div class="small-caps mb-2">03 de fevereiro de 2025 · Acervo digital</div>
+        <h1 class="display-5 section-title mb-3">Site, acervo digital e cultura local: quando a memória fica acessível</h1>
+        <p class="lead lead-muted col-lg-9">Um site pode organizar fotos, vídeos, relatos, gírias e atividades para que a população consulte e reconheça sua própria cultura.</p>
+        <img class="article-page-img mt-4" src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" alt="Notebook exibindo site" loading="eager">
+      </div>
+    </header>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <aside class="col-lg-4">
+            <div class="glass p-4 article-outline">
+              <span class="small-caps">Outline</span>
+              <h2 class="h5 mt-2 mb-3">Estrutura do artigo</h2>
+              <ol class="mb-0 ps-3"><li>1. Por que esse tema importa</li>
+<li>2. O olhar pedagógico sobre a cultura juvenil</li>
+<li>3. Documentário, entrevistas e memória local</li>
+<li>4. Linguagem, gírias e produção cultural</li>
+<li>5. Site e devolutiva para a comunidade</li></ol>
+            </div>
+          </aside>
+          <article class="col-lg-8 article-body">
+            <section class="mb-5"><h2 class="h3 section-title mb-3">1. Por que esse tema importa</h2><p>O tema “Site, acervo digital e cultura local: quando a memória fica acessível” se relaciona diretamente com a compreensão da infância, da adolescência e da cultura juvenil como campos vivos de produção cultural. Muitas vezes, aquilo que crianças, pré-adolescentes e adolescentes fazem no cotidiano é visto apenas como passatempo. No entanto, do ponto de vista pedagógico e cultural, essas práticas revelam formas de convivência, linguagem, imaginação, criação de regras, pertencimento e construção de identidade.</p><p>Registrar essas práticas é reconhecer que a cultura não está apenas nos espaços formais. Ela também aparece na praça, no parque, na rua, na quadra, no celular, nos jogos eletrônicos, nas conversas entre amigos, nas gírias, nos memes e nas brincadeiras improvisadas. Quando observamos com atenção, percebemos que cada geração cria seus próprios códigos para existir no mundo.</p><p>Em uma cidade, essa cultura cotidiana pode desaparecer sem deixar marcas se não for documentada. O que hoje parece comum, daqui a alguns anos poderá ser lembrado como uma forma específica de viver a infância e a juventude em determinado tempo histórico. Por isso, o registro audiovisual, fotográfico e textual se torna uma ação de memória.</p></section>
+<section class="mb-5"><h2 class="h3 section-title mb-3">2. O olhar pedagógico sobre a cultura juvenil</h2><p>A Pedagogia contribui para esse tipo de projeto porque permite olhar para crianças e adolescentes não apenas como alunos, mas como sujeitos culturais. Eles aprendem brincando, conversando, criando desafios, disputando jogos, formando grupos e inventando modos de comunicação. Cada brincadeira carrega aprendizados sobre corpo, espaço, regra, limite, cooperação e autonomia.</p><p>Ao documentar brincadeiras e práticas juvenis, o olhar pedagógico busca compreender o processo, e não apenas o resultado. Interessa saber como as crianças organizam uma brincadeira, quem define as regras, como resolvem conflitos, quais palavras usam, que objetos improvisam e que referências culturais aparecem em suas falas.</p><p>Esse tipo de observação também valoriza a escuta. Em vez de falar pelas crianças, o projeto propõe ouvi-las: perguntar do que brincam, como aprenderam, com quem jogam, quais espaços frequentam, quais gírias utilizam, quais jogos fazem parte de sua rotina e o que consideram divertido ou importante.</p></section>
+<section class="mb-5"><h2 class="h3 section-title mb-3">3. Documentário, entrevistas e memória local</h2><p>O documentário é uma linguagem adequada para registrar esse universo porque une imagem, som, relato e contexto. Ele permite mostrar as crianças e adolescentes em seus espaços de convivência, apresentar entrevistas com pais, mães, responsáveis e jovens, além de registrar cenas que ajudam a compreender como a cultura atual se manifesta.</p><p>As entrevistas com familiares podem conectar gerações. Pais e mães podem comparar as brincadeiras de sua infância com as práticas atuais, mostrando mudanças e permanências. Já as crianças e adolescentes podem explicar seus próprios jogos, gírias e referências, tornando-se protagonistas do registro.</p><p>Esse processo gera um documento histórico do presente. O objetivo não é romantizar o passado nem julgar as novas formas de brincar, mas compreender que a cultura muda. Games, esportes, vídeos, memes, brincadeiras de parque, desafios e conversas fazem parte de uma mesma paisagem cultural contemporânea.</p></section>
+<section class="mb-5"><h2 class="h3 section-title mb-3">4. Linguagem, gírias e produção cultural</h2><p>As gírias e expressões atuais são parte fundamental da cultura juvenil. Elas funcionam como códigos de pertencimento e ajudam a criar vínculos entre grupos. Registrar palavras, significados e contextos de uso permite compreender como uma geração nomeia suas experiências, seus afetos, seus conflitos e suas formas de humor.</p><p>Palavras que hoje circulam entre crianças e adolescentes podem desaparecer rapidamente ou ganhar novos sentidos. Por isso, um glossário cultural, associado ao documentário e ao site do projeto, pode se tornar um material importante para a memória local. Não se trata apenas de listar palavras, mas de registrar como elas aparecem nas conversas e nas práticas de convivência.</p><p>Além das gírias, a produção cultural atual envolve memes, vídeos curtos, jogos eletrônicos, campeonatos de games, desenhos, músicas, danças, desafios, esportes e brincadeiras criadas no cotidiano. Tudo isso revela criatividade e participação social.</p></section>
+<section class="mb-5"><h2 class="h3 section-title mb-3">5. Site e devolutiva para a comunidade</h2><p>O site do projeto amplia o alcance do documentário porque permite organizar fotos, registros, trechos de entrevistas, lista de atividades, palavras e significados. Dessa forma, a população pode acessar o material depois da finalização do vídeo e consultar o acervo como memória pública.</p><p>A devolutiva digital é importante porque o projeto não se encerra apenas na gravação. Ele retorna para a comunidade como documento cultural, educativo e acessível. Escolas, famílias, estudantes e moradores poderão reconhecer no material elementos de sua própria vida cotidiana.</p><p>Ao unir documentário, site e acervo digital, a proposta contribui para preservar a cultura do presente. O que as crianças fazem agora, como falam, onde brincam, que jogos preferem e como convivem pode se tornar um registro significativo para as próximas gerações.</p></section>
+
+            <div class="glass p-4 my-5">
+              <h2 class="h4 section-title">Sobre este texto</h2>
+              <p class="mb-0">Este artigo integra o acervo digital do projeto de documentação cultural sobre infância, adolescência, brincadeiras, games, gírias e memória contemporânea. A proposta é registrar práticas atuais como parte da cultura viva da comunidade.</p>
+            </div>
+            <div class="d-flex flex-wrap justify-content-between gap-2">
+              <div><a class="btn btn-outline-brand rounded-pill" href="https://julianapedagogia.vercel.app/artigos/documentario-como-acao-educativa-2025.html"><i class="bi bi-arrow-left me-1"></i> Artigo anterior</a></div>
+              <div><a class="btn btn-brand rounded-pill" href="https://julianapedagogia.vercel.app/artigos/infancia-e-tecnologias-digitais-2025.html">Próximo artigo <i class="bi bi-arrow-right ms-1"></i></a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-5">
+    <div class="container">
+      <h2 class="h5 text-white">Juliana Pedagogia</h2>
+      <p>Infância, juventude, cultura digital, documentário e memória local.</p>
+      <a class="btn btn-outline-light rounded-pill" href="https://julianapedagogia.vercel.app/#artigos">Ver todos os artigos</a>
+      <hr class="border-secondary my-4">
+      <p class="small mb-0">© 2026 — Site estático para GitHub e Vercel.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

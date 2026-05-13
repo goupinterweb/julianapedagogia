@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artigos | Juliana Pedagogia</title>
+  <meta name="description" content="Todos os artigos do site Juliana Pedagogia sobre infância, juventude, cultura digital, documentário, brincadeiras, gírias e memória local.">
+  <meta name="author" content="Juliana Sancinetti Custódio Fabris">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+:root{
+  --bg:#fbf7ef;
+  --paper:#ffffff;
+  --ink:#25322f;
+  --muted:#66746f;
+  --brand:#246b5f;
+  --brand-2:#f0a33a;
+  --brand-3:#a85f45;
+  --soft:#e8f3ef;
+  --line:rgba(37,50,47,.14);
+  --focus:#005fcc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(240,163,58,.20), transparent 34rem),
+    radial-gradient(circle at 80% 0%, rgba(36,107,95,.16), transparent 32rem),
+    var(--bg);
+  font-size:18px;
+  line-height:1.65;
+}
+body.large-text{font-size:20px}
+body.high-contrast{
+  --bg:#000;
+  --paper:#fff;
+  --ink:#000;
+  --muted:#222;
+  --brand:#003cff;
+  --brand-2:#ffbf00;
+  --brand-3:#111;
+  --soft:#fff;
+  --line:#000;
+}
+a{color:var(--brand)}
+a:hover{color:#17483f}
+.skip-link{
+  position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem;top:1rem;width:auto;height:auto;z-index:9999;
+  background:#fff;color:#000;padding:.75rem 1rem;border:3px solid var(--focus);border-radius:.75rem;
+}
+:focus-visible{outline:4px solid var(--focus);outline-offset:3px}
+.navbar{
+  background:rgba(255,255,255,.92)!important;
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.brand-mark{
+  width:44px;height:44px;border-radius:16px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--brand),var(--brand-2));
+  color:#fff;font-weight:900;
+  box-shadow:0 16px 36px rgba(36,107,95,.24);
+}
+.btn-brand{
+  background:var(--brand);
+  color:#fff;
+  border:0;
+}
+.btn-brand:hover{background:#17483f;color:#fff}
+.btn-outline-brand{
+  border:1px solid rgba(36,107,95,.42);
+  color:var(--brand);
+  background:#fff;
+}
+.btn-outline-brand:hover{background:var(--brand);color:#fff}
+.hero{
+  padding:8rem 0 4rem;
+}
+.hero-card{
+  border:1px solid var(--line);
+  border-radius:2rem;
+  overflow:hidden;
+  background:rgba(255,255,255,.82);
+  box-shadow:0 30px 75px rgba(37,50,47,.12);
+}
+.hero-img{
+  min-height:100%;
+  background:
+    linear-gradient(180deg, rgba(20,31,29,.08), rgba(20,31,29,.72)),
+    url("https://images.pexels.com/photos/8613089/pexels-photo-8613089.jpeg?auto=compress&cs=tinysrgb&w=1600") center/cover;
+}
+.section-title{
+  font-weight:900;
+  letter-spacing:-.045em;
+}
+.lead-muted{color:var(--muted)}
+.small-caps{
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  color:var(--muted);
+  font-size:.78rem;
+  font-weight:800;
+}
+.glass{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.82);
+  border-radius:1.5rem;
+  box-shadow:0 18px 48px rgba(37,50,47,.08);
+}
+.accessibility-panel{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:1000;
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.accessibility-panel button{
+  box-shadow:0 12px 35px rgba(37,50,47,.18);
+}
+.feature-card{
+  border:1px solid var(--line);
+  border-radius:1.5rem;
+  background:#fff;
+  padding:1.5rem;
+  height:100%;
+}
+.feature-card i{font-size:2rem;color:var(--brand)}
+.article-card{
+  border:1px solid var(--line);
+  border-radius:1.5rem;
+  background:#fff;
+  overflow:hidden;
+  height:100%;
+  transition:.22s ease;
+}
+.article-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 22px 50px rgba(37,50,47,.14);
+}
+.article-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  background:#e9e4d8;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  border-radius:999px;
+  padding:.3rem .65rem;
+  background:var(--soft);
+  color:var(--brand);
+  font-size:.78rem;
+  font-weight:700;
+  margin:.15rem;
+}
+.video-card{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:1.5rem;
+  overflow:hidden;
+  height:100%;
+}
+.video-frame{
+  aspect-ratio:16/9;
+  width:100%;
+}
+.video-frame iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+.article-page-hero{padding:8rem 0 2rem}
+.article-page-img{
+  width:100%;
+  max-height:480px;
+  object-fit:cover;
+  border-radius:2rem;
+  box-shadow:0 25px 70px rgba(37,50,47,.13);
+}
+.article-body p{
+  font-size:1.08rem;
+  line-height:1.85;
+  color:#33413d;
+  margin-bottom:1.15rem;
+}
+.article-outline{
+  position:sticky;
+  top:96px;
+}
+.article-outline li{margin-bottom:.55rem;color:var(--muted)}
+.footer{
+  background:#152522;
+  color:#d8e4df;
+}
+.footer a{color:#fff}
+.list-group-item{
+  border-color:var(--line);
+}
+@media (max-width:991px){
+  .hero{padding-top:6rem}
+  .hero-img{min-height:320px}
+  .article-outline{position:static}
+}
+
+
+/* Correção Vercel: CSS principal embutido em todos os HTMLs */
+img{max-width:100%;height:auto}
+.navbar-brand{text-decoration:none}
+.btn{text-decoration:none}
+.bg-white{background:#fff!important}
+.text-secondary{color:#66746f!important}
+.container{max-width:1140px}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <nav class="navbar navbar-expand-lg fixed-top" aria-label="Menu principal">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">JP</span>
+        <span>Juliana Pedagogia</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Abrir menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navMain" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="../index.html#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#portfolio">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#artigos">Artigos</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand rounded-pill px-3" href="../index.html#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo" class="article-page-hero">
+    <div class="container">
+      <a class="btn btn-outline-brand rounded-pill mb-4" href="../index.html">
+        <i class="bi bi-arrow-left me-1"></i> Voltar para home
+      </a>
+      <span class="small-caps">Índice de artigos</span>
+      <h1 class="display-5 section-title mt-2 mb-3">Todos os artigos</h1>
+      <p class="lead lead-muted col-lg-9">
+        Páginas HTML individuais prontas para GitHub e Vercel. Cada artigo abaixo abre em sua própria página.
+      </p>
+
+      <div class="glass p-3 p-md-4 mt-4">
+        <div class="list-group list-group-flush">
+          <a class="list-group-item list-group-item-action py-4" href="./brincadeiras-de-agora-cultura-da-infancia-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">12 de fevereiro de 2024 · Infância e cultura</div>
+      <h2 class="h5 fw-bold mb-2">Brincadeiras de agora: por que documentar a cultura viva da infância</h2>
+      <p class="text-secondary mb-0">As brincadeiras atuais também são memória cultural. O que parece comum hoje pode ser o registro histórico das próximas gerações.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./brincar-na-rua-e-seguranca-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">29 de maio de 2025 · Espaço público</div>
+      <h2 class="h5 fw-bold mb-2">Brincar na rua: liberdade, segurança e pertencimento</h2>
+      <p class="text-secondary mb-0">A presença de crianças no espaço público mostra como a cidade acolhe ou limita a infância.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./campeonatos-de-games-como-cultura-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">14 de julho de 2025 · E-sports</div>
+      <h2 class="h5 fw-bold mb-2">Campeonatos de games como cultura: competição, treino e comunidade</h2>
+      <p class="text-secondary mb-0">Jogadores locais e competições digitais mostram novas formas de talento, disciplina e convivência juvenil.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./cultura-digital-e-infancia-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">15 de julho de 2024 · Cultura digital</div>
+      <h2 class="h5 fw-bold mb-2">Cultura digital e infância: entre telas, ruas, jogos e imaginação</h2>
+      <p class="text-secondary mb-0">A infância contemporânea mistura brincadeiras presenciais, redes sociais, vídeos, jogos e novas linguagens culturais.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./cultura-dos-memes-e-linguagem-dos-jovens-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">07 de abril de 2025 · Memes</div>
+      <h2 class="h5 fw-bold mb-2">Cultura dos memes: humor, linguagem e crítica entre estudantes</h2>
+      <p class="text-secondary mb-0">Memes não são apenas piadas rápidas; eles revelam repertórios, referências e formas atuais de comentário social.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./documentar-o-agora-para-o-futuro-2026.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">28 de abril de 2026 · Memória e futuro</div>
+      <h2 class="h5 fw-bold mb-2">Documentar o agora para o futuro: por que o cotidiano juvenil importa</h2>
+      <p class="text-secondary mb-0">O presente dos jovens será a memória cultural do futuro. Documentar agora é valorizar a vida cotidiana de Bocaina.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./documentario-como-acao-educativa-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">17 de janeiro de 2025 · Audiovisual</div>
+      <h2 class="h5 fw-bold mb-2">Documentário como ação educativa: filmar, escutar e devolver à comunidade</h2>
+      <p class="text-secondary mb-0">O documentário não é apenas um produto final; ele também é processo pedagógico, escuta e devolutiva cultural.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./escuta-de-criancas-em-projetos-culturais-2026.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">20 de janeiro de 2026 · Escuta sensível</div>
+      <h2 class="h5 fw-bold mb-2">Escuta de crianças em projetos culturais: cuidado, consentimento e respeito</h2>
+      <p class="text-secondary mb-0">Projetos com crianças e adolescentes precisam priorizar linguagem acessível, proteção, autorização e respeito.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./esportes-urbanos-e-juventude-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">18 de outubro de 2024 · Esportes</div>
+      <h2 class="h5 fw-bold mb-2">Esportes urbanos e juventude: corpo, praça e identidade</h2>
+      <p class="text-secondary mb-0">Do futebol ao skate, do vôlei ao treino improvisado, o esporte também constrói memória e pertencimento.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./familias-como-guardias-da-memoria-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">26 de novembro de 2024 · Família</div>
+      <h2 class="h5 fw-bold mb-2">Famílias como guardiãs da memória: pais, mães e relatos sobre brincar</h2>
+      <p class="text-secondary mb-0">Pais, mães e responsáveis ajudam a conectar as brincadeiras atuais com as memórias de outras gerações.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./girias-atuais-palavras-e-significados-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">24 de junho de 2024 · Linguagem juvenil</div>
+      <h2 class="h5 fw-bold mb-2">Gírias atuais: palavras, significados e pertencimento entre jovens</h2>
+      <p class="text-secondary mb-0">As gírias mostram como crianças e adolescentes criam identidade, humor, códigos de grupo e modos próprios de narrar o mundo.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./ia-planejamento-e-projetos-culturais-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">11 de novembro de 2025 · IA e cultura</div>
+      <h2 class="h5 fw-bold mb-2">IA, planejamento e projetos culturais: tecnologia como apoio, não substituição</h2>
+      <p class="text-secondary mb-0">Ferramentas de IA podem apoiar pesquisa, roteiro e organização de ideias sem apagar a sensibilidade humana.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./infancia-adolescencia-e-convivencia-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">03 de setembro de 2024 · Convivência</div>
+      <h2 class="h5 fw-bold mb-2">Infância, adolescência e convivência: o que as brincadeiras ensinam</h2>
+      <p class="text-secondary mb-0">As brincadeiras ensinam negociação, regras, liderança, cuidado, conflito e cooperação.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./infancia-e-tecnologias-digitais-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">21 de março de 2025 · Tecnologia e educação</div>
+      <h2 class="h5 fw-bold mb-2">Infância e tecnologias digitais: cuidado, mediação e criatividade</h2>
+      <p class="text-secondary mb-0">A tecnologia pode ser recurso educativo quando vem acompanhada de mediação, escuta e intencionalidade pedagógica.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./jogos-eletronicos-e-socializacao-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">06 de maio de 2024 · Games</div>
+      <h2 class="h5 fw-bold mb-2">Jogos eletrônicos e socialização: a cultura gamer como parte da juventude</h2>
+      <p class="text-secondary mb-0">Games, campeonatos e conversas online fazem parte das novas formas de lazer, pertencimento e expressão juvenil.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./memoria-local-do-presente-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">09 de agosto de 2024 · Memória local</div>
+      <h2 class="h5 fw-bold mb-2">Memória local do presente: registrar hoje para preservar amanhã</h2>
+      <p class="text-secondary mb-0">Registrar as práticas atuais da juventude é reconhecer que o presente também se torna patrimônio cultural.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./palavras-que-marcam-uma-geracao-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">22 de setembro de 2025 · Linguagem juvenil</div>
+      <h2 class="h5 fw-bold mb-2">Palavras que marcam uma geração: glossário afetivo das gírias atuais</h2>
+      <p class="text-secondary mb-0">Registrar palavras e significados é preservar a forma como uma geração se reconhece e se comunica.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./pedagogia-escuta-e-documentario-cultural-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">28 de março de 2024 · Pedagogia</div>
+      <h2 class="h5 fw-bold mb-2">Pedagogia, escuta e documentário: aprender a registrar relatos</h2>
+      <p class="text-secondary mb-0">O documentário cultural exige escuta, cuidado e sensibilidade para transformar relatos em memória pública.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./pracas-parques-e-cultura-juvenil-2024.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">19 de abril de 2024 · Cidade e juventude</div>
+      <h2 class="h5 fw-bold mb-2">Praças, parques e cultura juvenil: onde a cidade vira espaço de aprendizagem</h2>
+      <p class="text-secondary mb-0">Os espaços públicos são salas de aula abertas, onde crianças e adolescentes convivem, criam regras, inventam jogos e produzem cultura.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+<a class="list-group-item list-group-item-action py-4" href="./site-acervo-digital-e-cultura-local-2025.html">
+  <div class="d-flex justify-content-between gap-3">
+    <div>
+      <div class="small-caps mb-1">03 de fevereiro de 2025 · Acervo digital</div>
+      <h2 class="h5 fw-bold mb-2">Site, acervo digital e cultura local: quando a memória fica acessível</h2>
+      <p class="text-secondary mb-0">Um site pode organizar fotos, vídeos, relatos, gírias e atividades para que a população consulte e reconheça sua própria cultura.</p>
+    </div>
+    <i class="bi bi-arrow-right-short fs-2" aria-hidden="true"></i>
+  </div>
+</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer py-5 mt-5">
+    <div class="container">
+      <h2 class="h5 text-white">Juliana Pedagogia</h2>
+      <p class="mb-0">Infância, juventude, cultura digital, documentário e memória local.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
